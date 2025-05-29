@@ -1,0 +1,238 @@
+/* ====================================
+   CUSTOMIZATION GUIDE
+   ====================================
+   This CSS file uses CSS variables (custom properties) for easy customization.
+   To change colors, fonts, spacing, or other properties, you can either:
+   1. Edit the variables in the :root section
+   2. Or modify the specific properties in each section below
+*/
+
+/* Global Color Variables - Edit these to change your entire color scheme at once */
+:root {
+    /* Main colors - Used for primary elements and accents */
+    --primary-color: #333333;  /* Used in headings and buttons */
+    --secondary-color: #2ecc71;  /* Used for hover states and accents */
+    
+    /* Background and text colors */
+    --background-color: #c7dcff; /* Main page background */
+    --text-color: #333333;      /* Main text color */
+    
+    /* Navigation colors */
+    --nav-background: #f8f9fa;  /* Navigation bar background */
+    --link-color: #2980b9;      /* Link color in normal state */
+    --link-hover-color: #1abc9c; /* Link color when hovered */
+}
+
+/* Body Styles 
+   To change the overall page layout, edit these properties:
+   - padding: controls space around the content
+   - font-family: changes the main font (use web-safe fonts or import custom ones)
+   - line-height: adjusts the space between lines of text
+*/
+body {
+    margin: 0;
+    padding: 20px;              /* Edit to change page padding */
+    font-family: Arial, sans-serif; /* Change to use different fonts */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;          /* Edit to adjust line spacing */
+}
+
+/* Navigation Styles 
+   To customize the navigation bar, modify:
+   - padding: changes space inside the nav bar
+   - margin-bottom: adjusts space below the nav bar
+   - border-radius: changes the rounded corners
+*/
+nav {
+    background-color: var(--nav-background);
+    padding: 1rem;             /* Edit to change nav bar padding */
+    margin-bottom: 2rem;       /* Edit to adjust space below nav */
+    border-radius: 5px;        /* Edit or remove for different corner style */
+}
+
+/* Navigation Links 
+   Customize individual nav links with:
+   - padding: changes space around each link
+   - margin: adjusts space between links
+*/
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;      /* Edit to change link padding */
+    margin: 0 0.5rem;          /* Edit to adjust space between links */
+    transition: color 0.3s ease; /* Edit for different hover transition speed */
+}
+
+/* Heading Styles 
+   To modify the main headings:
+   - font-size: changes text size
+   - margin-bottom: adjusts space below headings
+*/
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;         /* Edit to change heading size */
+    margin-bottom: 1rem;       /* Edit to adjust space below heading */
+    text-align: center;        /* Change to 'left' or 'right' to adjust alignment */
+}
+
+/* Paragraph Styles 
+   Customize regular text with:
+   - font-size: changes text size
+   - margin-bottom: adjusts space between paragraphs
+*/
+p {
+    font-size: 1.1rem;         /* Edit to change paragraph text size */
+    margin-bottom: 1rem;       /* Edit to adjust space between paragraphs */
+}
+
+/* Container Styles 
+   For centered content layout:
+   - max-width: changes the maximum width of centered content
+   - padding: adjusts space on the sides
+*/
+.container {
+    max-width: 1200px;         /* Edit to change maximum content width */
+    margin: 0 auto;
+    padding: 0 20px;           /* Edit to change side padding */
+}
+
+/* Button Styles 
+   Customize buttons with:
+   - padding: changes button size
+   - border-radius: adjusts corner roundness
+   - box-shadow: adds or removes shadow effect
+*/
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;        /* Edit to change button size */
+    border: none;
+    border-radius: 5px;        /* Edit for different corner roundness */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Card Styles 
+   For content boxes:
+   - padding: changes internal spacing
+   - border-radius: adjusts corner roundness
+   - box-shadow: modifies shadow effect
+*/
+.card {
+    background-color: white;
+    border-radius: 8px;        /* Edit for different corner roundness */
+    padding: 20px;             /* Edit to change internal spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Edit for different shadow */
+    margin-bottom: 20px;
+}
+
+/* Banner Styles */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: var(--primary-color);
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    text-align: center;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Description Section */
+.description-section {
+    padding: 1rem;
+}
+
+.description-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Video Section */
+.video-section {
+    padding: 1rem;
+}
+
+.video-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Responsive Design 
+   Mobile-friendly adjustments:
+   - Change the max-width value to adjust when mobile layout kicks in
+   - Modify any properties inside to change mobile appearance
+*/
+@media (max-width: 768px) {    /* Edit 768px to change breakpoint */
+    body {
+        padding: 10px;         /* Edit to change mobile padding */
+    }
+
+    h1 {
+        font-size: 2rem;       /* Edit to change mobile heading size */
+    }
+
+    nav {
+        padding: 0.5rem;       /* Edit to change mobile nav padding */
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;      /* Edit to change mobile nav link spacing */
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+} 
