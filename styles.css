@@ -1,0 +1,321 @@
+/* ====================================
+   CUSTOMIZATION GUIDE
+   ====================================
+   This CSS file uses CSS variables (custom properties) for easy customization.
+   To change colors, fonts, spacing, or other properties, you can either:
+   1. Edit the variables in the :root section
+   2. Or modify the specific properties in each section below
+*/
+
+/* Global Color Variables - Edit these to change your entire color scheme at once */
+:root {
+    /* Main colors - Used for primary elements and accents */
+    --primary-color: #333333;  /* Used in headings and buttons */
+    --secondary-color: #2ecc71;  /* Used for hover states and accents */
+    
+    /* Background and text colors */
+    --background-color: #47569c; /* Main page background */
+    --text-color: #333333;      /* Main text color */
+    
+    /* Navigation colors */
+    --nav-background: #f8f9fa;  /* Navigation bar background */
+    --link-color: #2980b9;      /* Link color in normal state */
+    --link-hover-color: #1abc9c; /* Link color when hovered */
+}
+
+/* Body Styles 
+   To change the overall page layout, edit these properties:
+   - padding: controls space around the content
+   - font-family: changes the main font (use web-safe fonts or import custom ones)
+   - line-height: adjusts the space between lines of text
+*/
+body {
+    margin: 0;
+    padding: 0;              /* Remove body padding */
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Main Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-background);
+    padding: 0.5rem 2rem;
+    margin-bottom: 0;  /* Remove margin to make it touch banner */
+    border-radius: 0;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-space {
+    flex: 0 0 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 1rem 1rem; /* Reduced left padding from 2rem to 1rem */
+}
+
+.logo {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: contain;
+    transform: scale(1.5) translateY(0); /* Remove the up translation to center vertically */
+    transform-origin: left center;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    padding-right: 1rem;
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;  /* Back to original padding */
+    transition: color 0.3s ease;
+    border-radius: 4px;
+    font-size: 1rem;  /* Back to original font size */
+}
+
+nav a:hover {
+    color: var(--link-hover-color);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Heading Styles 
+   To modify the main headings:
+   - font-size: changes text size
+   - margin-bottom: adjusts space below headings
+*/
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;         /* Edit to change heading size */
+    margin-bottom: 1rem;       /* Edit to adjust space below heading */
+    text-align: center;        /* Change to 'left' or 'right' to adjust alignment */
+}
+
+/* Paragraph Styles 
+   Customize regular text with:
+   - font-size: changes text size
+   - margin-bottom: adjusts space between paragraphs
+*/
+p {
+    font-size: 1.1rem;         /* Edit to change paragraph text size */
+    margin-bottom: 1rem;       /* Edit to adjust space between paragraphs */
+}
+
+/* Container Styles 
+   For centered content layout:
+   - max-width: changes the maximum width of centered content
+   - padding: adjusts space on the sides
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;        /* Add some padding for content */
+}
+
+/* Button Styles 
+   Customize buttons with:
+   - padding: changes button size
+   - border-radius: adjusts corner roundness
+   - box-shadow: adds or removes shadow effect
+*/
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;        /* Edit to change button size */
+    border: none;
+    border-radius: 5px;        /* Edit for different corner roundness */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Card Styles 
+   For content boxes:
+   - padding: changes internal spacing
+   - border-radius: adjusts corner roundness
+   - box-shadow: modifies shadow effect
+*/
+.card {
+    background-color: white;
+    border-radius: 8px;        /* Edit for different corner roundness */
+    padding: 20px;             /* Edit to change internal spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Edit for different shadow */
+    margin-bottom: 20px;
+}
+
+/* Banner Styles */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: var(--primary-color);
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    text-align: center;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Description Section */
+.description-section {
+    padding: 1rem;
+}
+
+.description-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Video Section */
+.video-section {
+    padding: 1rem;
+}
+
+.video-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+.footer {
+    position: relative;
+    margin-top: 4rem;
+    min-height: 200px;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--background-color) 0%, var(--background-color) 60%, #2ecc71 60%, #27ae60 100%);
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.footer-image-container {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.footer-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Update responsive design for new header */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 0.5rem 1rem;  /* Smaller padding on mobile */
+    }
+
+    .logo-space {
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        margin: 0.25rem 0;
+    }
+
+    body {
+        padding: 10px;         /* Edit to change mobile padding */
+    }
+
+    h1 {
+        font-size: 2rem;       /* Edit to change mobile heading size */
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        min-height: 150px;
+    }
+
+    .footer-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        padding: 0 1rem;      /* Smaller padding on mobile */
+    }
+} 
