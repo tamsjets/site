@@ -14,12 +14,12 @@
     --secondary-color: #2ecc71;  /* Used for hover states and accents */
     
     /* Background and text colors */
-    --background-color: #47569c; /* Main page background */
+    --background-color: #3a77e3; /* Main page background */
     --text-color: #333333;      /* Main text color */
     
     /* Navigation colors */
-    --nav-background: #f8f9fa;  /* Navigation bar background */
-    --link-color: #2980b9;      /* Link color in normal state */
+    --nav-background: #aac9ff;  /* Navigation bar background */
+    --link-color: #3a77e3;      /* Link color in normal state */
     --link-hover-color: #1abc9c; /* Link color when hovered */
 }
 
