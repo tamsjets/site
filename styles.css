@@ -1,0 +1,642 @@
+/* ====================================
+   CUSTOMIZATION GUIDE
+   ====================================
+   This CSS file uses CSS variables (custom properties) for easy customization.
+   To change colors, fonts, spacing, or other properties, you can either:
+   1. Edit the variables in the :root section
+   2. Or modify the specific properties in each section below
+*/
+
+/* Global Color Variables - Edit these to change your entire color scheme at once */
+:root {
+    /* Main colors - Used for primary elements and accents */
+    --primary-color: #333333;  /* Used in headings and buttons */
+    --secondary-color: #2ecc71;  /* Used for hover states and accents */
+    
+    /* Background and text colors */
+    --background-color: #3a77e3; /* Main page background */
+    --text-color: #333333;      /* Main text color */
+    
+    /* Navigation colors */
+    --nav-background: #aac9ff;  /* Navigation bar background */
+    --link-color: #3a77e3;      /* Link color in normal state */
+    --link-hover-color: #1abc9c; /* Link color when hovered */
+}
+
+/* Body Styles 
+   To change the overall page layout, edit these properties:
+   - padding: controls space around the content
+   - font-family: changes the main font (use web-safe fonts or import custom ones)
+   - line-height: adjusts the space between lines of text
+*/
+body {
+    margin: 0;
+    padding: 0;              /* Remove body padding */
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Main Header Styles */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-background);
+    padding: 0.5rem 2rem;
+    margin-bottom: 0;  /* Remove margin to make it touch banner */
+    border-radius: 0;
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo-space {
+    flex: 0 0 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 1rem 1rem; /* Reduced left padding from 2rem to 1rem */
+}
+
+.logo {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: contain;
+    transform: scale(1.5) translateY(0); /* Remove the up translation to center vertically */
+    transform-origin: left center;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    padding-right: 1rem;
+}
+
+nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;  /* Back to original padding */
+    transition: color 0.3s ease;
+    border-radius: 4px;
+    font-size: 1rem;  /* Back to original font size */
+}
+
+nav a:hover {
+    color: var(--link-hover-color);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Heading Styles 
+   To modify the main headings:
+   - font-size: changes text size
+   - margin-bottom: adjusts space below headings
+*/
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;         /* Edit to change heading size */
+    margin-bottom: 1rem;       /* Edit to adjust space below heading */
+    text-align: center;        /* Change to 'left' or 'right' to adjust alignment */
+}
+
+/* Paragraph Styles 
+   Customize regular text with:
+   - font-size: changes text size
+   - margin-bottom: adjusts space between paragraphs
+*/
+p {
+    font-size: 1.1rem;         /* Edit to change paragraph text size */
+    margin-bottom: 1rem;       /* Edit to adjust space between paragraphs */
+}
+
+/* Container Styles 
+   For centered content layout:
+   - max-width: changes the maximum width of centered content
+   - padding: adjusts space on the sides
+*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;        /* Smaller padding on mobile */
+    text-align: center;      /* Center all text within the container */
+}
+
+/* Button Styles 
+   Customize buttons with:
+   - padding: changes button size
+   - border-radius: adjusts corner roundness
+   - box-shadow: adds or removes shadow effect
+*/
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;        /* Edit to change button size */
+    border: none;
+    border-radius: 5px;        /* Edit for different corner roundness */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Card Styles 
+   For content boxes:
+   - padding: changes internal spacing
+   - border-radius: adjusts corner roundness
+   - box-shadow: modifies shadow effect
+*/
+.card {
+    background-color: white;
+    border-radius: 8px;        /* Edit for different corner roundness */
+    padding: 20px;             /* Edit to change internal spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Edit for different shadow */
+    margin-bottom: 20px;
+}
+
+/* Banner Styles */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: var(--primary-color);
+    background-image: url('pictures/bme-banner.png');
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    text-align: center;
+}
+
+/* Content Grid */
+.content-grid {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+    padding: 0;
+    max-width: 1900px;  /* Increased slightly to allow sections to spread out */
+    min-height: 800px;
+    position: relative;
+}
+
+/* Description Section */
+.description-section {
+    background: transparent;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    width: 600px;
+    margin-left: 0.5rem;  /* Reduced from 1rem to move closer to left edge */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    position: relative;
+    overflow: visible;
+}
+
+.description-section::before {
+    content: '';
+    position: absolute;
+    top: -300px;
+    left: -350px;  /* Moved left 150px from -200px */
+    width: 1200px;
+    height: 1000px;
+    background-image: url('pictures/cloud.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.description-section > * {
+    position: relative;
+    z-index: 2;
+    text-align: center;  /* Center text content */
+    max-width: 500px;  /* Limit width for better readability */
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.description-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.description-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.description-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Video Section */
+.video-section {
+    background: transparent;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    width: 600px;
+    margin-right: 1rem;  /* Reduced from 2rem to move closer to right edge */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    overflow: visible;
+}
+
+.video-section::before {
+    content: '';
+    position: absolute;
+    top: -300px;
+    left: -200px;
+    width: 1200px;  /* Increased to match left cloud */
+    height: 1000px;  /* Increased to match left cloud */
+    background-image: url('pictures/cloud.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+    transform: scaleX(-1);
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.video-section > * {
+    position: relative;
+    z-index: 2;
+    text-align: center;  /* Center text content */
+    max-width: 500px;  /* Limit width for better readability */
+    color: var(--text-color);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.video-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.video-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Video Container adjustments */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Standard 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Upcoming Events Section */
+.upcoming-events-section {
+    background: var(--nav-background);
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.upcoming-events-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Events Container */
+.events-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Calendar Container */
+.calendar-container {
+    flex: 1;
+    position: relative;
+    padding-bottom: 40%; /* Reduced from 75% to make it shorter */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.calendar-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Event List */
+.event-list {
+    flex: 1;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.event-list h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.event-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.event-list li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Committee Images */
+.committee-images-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.committee-image-holder {
+    width: 650px; /* Increased from 500px */
+    height: 350px; /* Increased from 300px */
+    background-color: #ddd; /* Placeholder background */
+    border-radius: 8px; /* Rounded corners for a rectangle */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.committee-link {
+    text-decoration: none; /* Removes underline from links */
+}
+
+.committee-links a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.swenext-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.swenext-photo-holder {
+    flex: 1;
+    height: 300px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+
+.about-us-section {
+    flex: 1;
+    text-align: left;
+}
+
+.committee-heads-heading {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.committee-heads-container {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-bottom: 40px;
+}
+
+.committee-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+.committee-head-photo {
+    width: 350px;
+    height: 350px;
+    background-color: #d0d0d0;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.committee-head-blurb {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to bottom, var(--background-color) 0%, var(--background-color) 60%, #2ecc71 60%, #27ae60 100%);
+    min-height: 200px;
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-image-container {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.footer-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Update responsive design for new header */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 0.5rem 1rem;  /* Smaller padding on mobile */
+    }
+
+    .logo-space {
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        margin: 0.25rem 0;
+    }
+
+    body {
+        padding: 10px;         /* Edit to change mobile padding */
+    }
+
+    h1 {
+        font-size: 2rem;       /* Edit to change mobile heading size */
+    }
+
+    .content-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 1rem;
+        min-height: auto;
+        position: static; /* Reset positioning */
+    }
+
+    .description-section::before,
+    .video-section::before {
+        width: 220%;  /* Increased from 200% for better content coverage */
+        height: 220%;  /* Increased from 200% for better content coverage */
+        top: -60%;  /* Adjusted for new size */
+        left: -60%;  /* Adjusted for new size */
+    }
+    
+    .description-section,
+    .video-section {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 0.5rem;  /* Reduced margin for mobile */
+        padding: 2rem;
+        height: auto;
+        min-height: 400px;
+        position: static;
+        overflow: visible;
+        text-align: center;
+    }
+
+    .description-section > *,
+    .video-section > * {
+        max-width: 100%;  /* Allow full width on mobile */
+    }
+
+    .video-section {
+        margin-top: 2rem;
+    }
+
+    .video-section h2 {
+        text-align: left;
+    }
+
+    .video-container {
+        margin: 1rem auto;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        min-height: 150px;
+    }
+
+    .footer-image-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        padding: 0 1rem;      /* Smaller padding on mobile */
+    }
+}
+
+/* End of styles */
+
+.board-bio-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    justify-content: center;
+    margin: 60px 0 0 0;
+}
+
+.board-photo-holder {
+    width: 300px;
+    height: 300px;
+    background-color: #d0d0d0;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.board-bio-text {
+    text-align: left;
+    max-width: 937px;
+    font-size: 2.06rem;
+}
+
+.board-bio-text h2 {
+    font-size: 2.81rem;
+}
+
+.board-bio-row-reverse {
+    flex-direction: row-reverse;
+} 
